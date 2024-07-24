@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { RedirectToSignIn, SignedIn, SignedOut } from "@clerk/nextjs";
 
+export const runtime = 'edge'
+
 export default function Home() {
   return (
     <>
