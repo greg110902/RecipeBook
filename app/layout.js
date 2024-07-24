@@ -13,18 +13,17 @@ export const runtime = 'edge'
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <ClerkProvider>
+    <ClerkProvider>
+      <html lang="en">
+        <body className={inter.className}>
           <SignedIn>
             {children}
           </SignedIn>
           <SignedOut>
             <RedirectToSignIn />
           </SignedOut>
-          
-        </ClerkProvider>
-      </body>
-    </html>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
