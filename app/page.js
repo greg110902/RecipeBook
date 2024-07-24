@@ -9,9 +9,6 @@ export default function Home() {
         Hello world
       </div>
     </SignedIn>
-    <SignedOut>
-      <RedirectToSignIn />
-    </SignedOut>
     </>
   )
 }
