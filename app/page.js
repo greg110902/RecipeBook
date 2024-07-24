@@ -5,6 +5,8 @@ export default function Home() {
   return (
     <>
     <RedirectToSignIn />
+
+    <h1>HELLO USER</h1>
     </>
   )
 }
