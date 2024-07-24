@@ -1,7 +1,18 @@
 import Image from "next/image";
+import { RedirectToSignIn, SignedIn, SignedOut } from "@clerk/nextjs";
 
 export default function Home() {
   return (
-    <div>Hello world</div>
+    <>
+    <SignedIn>
+      <div>
+        Hello world
+      </div>
+    </SignedIn>
+    <SignedOut>
+      <RedirectToSignIn />
+    </SignedOut>
+      
+    </>
   )
 }
