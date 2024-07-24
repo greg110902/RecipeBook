@@ -15,14 +15,11 @@ export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
       <html lang="en">
-        <SignedIn>
         <body className={inter.className}>
+          <SignedIn>
           {children}
+          </SignedIn>
         </body>
-        </SignedIn>
-        <SignedOut>
-          <RedirectToSignIn />
-        </SignedOut>
       </html>
     </ClerkProvider>
   );
