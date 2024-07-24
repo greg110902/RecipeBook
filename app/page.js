@@ -3,7 +3,6 @@ import { RedirectToSignIn, SignedIn, SignedOut } from "@clerk/nextjs";
 
 export default function Home() {
   return (
-    <>
     <SignedIn>
       <div>
         Hello world
@@ -12,7 +11,5 @@ export default function Home() {
     <SignedOut>
       <RedirectToSignIn />
     </SignedOut>
-      
-    </>
   )
 }
