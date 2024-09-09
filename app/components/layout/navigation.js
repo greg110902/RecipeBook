@@ -1,7 +1,12 @@
 import { UserButton } from "@clerk/nextjs";
 import { currentUser } from "@clerk/nextjs/server";
+import NavBarDropdown from "./navbar_dropdown";
 
 export default async function Navigation({ content }) {
+  const NavChildren = [
+    { name: "Recipes", route: "/recipes" },
+    { name: "Stock", route: "/stock" },
+  ];
   return (
     <div className="drawer z-10">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
@@ -34,7 +39,7 @@ export default async function Navigation({ content }) {
             <ul className="menu menu-horizontal">
               {/* Navbar menu content here */}
               <li>
-                <a href="/">Transactions list</a>
+                <NavBarDropdown title={"Cooking"} children={NavChildren} />
               </li>
               <li>
                 <a href={`/`}>User</a>
@@ -57,7 +62,7 @@ export default async function Navigation({ content }) {
         <ul className="menu bg-base-200 min-h-full w-80 p-4">
           {/* Sidebar content here */}
           <li>
-            <a href="/">Transactions list</a>
+            <a href="/">Recipes</a>
           </li>
           <li>
             <a href={`/`}>User</a>
