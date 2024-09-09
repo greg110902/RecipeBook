@@ -1,6 +1,7 @@
 import { UserButton } from "@clerk/nextjs";
 import { currentUser } from "@clerk/nextjs/server";
 import NavBarDropdown from "./navbar_dropdown";
+import SideBarDropdown from "./sidebar_dropdown";
 
 export default async function Navigation({ content }) {
   const NavChildren = [
@@ -39,12 +40,6 @@ export default async function Navigation({ content }) {
             <ul className="menu menu-horizontal">
               {/* Navbar menu content here */}
               <NavBarDropdown title={"Cooking"} content={NavChildren} />
-              <li>
-                <a href={`/`}>User</a>
-              </li>
-              <li>
-                <a href={`/`}>Details</a>
-              </li>
             </ul>
           </div>
         </div>
@@ -59,15 +54,7 @@ export default async function Navigation({ content }) {
         ></label>
         <ul className="menu bg-base-200 min-h-full w-80 p-4">
           {/* Sidebar content here */}
-          <li>
-            <a href="/">Recipes</a>
-          </li>
-          <li>
-            <a href={`/`}>User</a>
-          </li>
-          <li>
-            <a href={`/`}>Details</a>
-          </li>
+          <SideBarDropdown title={"Cooking"} content={NavChildren} />
         </ul>
       </div>
     </div>
