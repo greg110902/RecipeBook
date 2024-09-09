@@ -1,5 +1,6 @@
 "use client";
 
+import Card from "../components/recipes/recipe_card";
 import { GetRecipes } from "../utils/supabase/functions";
 
 export default function Page() {
@@ -7,13 +8,19 @@ export default function Page() {
   console.log(recipes);
 
   return (
-    <div>
+    <div className="flex flex-wrap justify-center">
       {recipes != undefined ? (
         recipes.map((recipe) => {
-          return JSON.stringify(recipe);
+          return (
+            <Card
+              image_url={recipe.img_url}
+              title={recipe.title}
+              recipe_id={recipe.id}
+            />
+          );
         })
       ) : (
-        <></>
+        <>Loading...</>
       )}
     </div>
   );
