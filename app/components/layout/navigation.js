@@ -38,9 +38,7 @@ export default async function Navigation({ content }) {
           <div className="hidden flex-none lg:block">
             <ul className="menu menu-horizontal">
               {/* Navbar menu content here */}
-              <li>
-                <NavBarDropdown title={"Cooking"} content={NavChildren} />
-              </li>
+              <NavBarDropdown title={"Cooking"} content={NavChildren} />
               <li>
                 <a href={`/`}>User</a>
               </li>
