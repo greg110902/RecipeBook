@@ -1,4 +1,14 @@
+"use client";
+
 export default function NavBarDropdown({ title, content }) {
+  window.addEventListener("click", function (e) {
+    document.querySelectorAll(".dropdown").forEach(function (dropdown) {
+      if (!dropdown.contains(e.target)) {
+        // Click was outside the dropdown, close it
+        dropdown.open = false;
+      }
+    });
+  });
   return (
     <details className="dropdown">
       <summary tabIndex={0} className="btn m-1">
