@@ -39,7 +39,7 @@ export default async function Navigation({ content }) {
             <ul className="menu menu-horizontal">
               {/* Navbar menu content here */}
               <li>
-                <NavBarDropdown title={"Cooking"} children={NavChildren} />
+                <NavBarDropdown title={"Cooking"} content={NavChildren} />
               </li>
               <li>
                 <a href={`/`}>User</a>
