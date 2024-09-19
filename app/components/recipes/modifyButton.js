@@ -1,12 +1,11 @@
 "use client";
-import ConfirmDeleteRecipe from "./modify/deleteConfirm";
-import Dialog from "../dialog";
+import DeleteDialog from "../dialog";
 import { useState } from "react";
 
-export default function DropdownModifyRecipe() {
+export default function DropdownModifyRecipe({id}) {
   const [ open, setOpen ] = useState(false);
 
-  function close(setOpen) {
+  function close() {
     setOpen(false);
   }
 
@@ -16,14 +15,14 @@ export default function DropdownModifyRecipe() {
         <summary className="btn mx-5">Edit</summary>
         <ul className="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
           <li>
-            <a>Modify recipe</a>
+            <a href={`/edit/${id}`}>Modify recipe</a>
           </li>
           <li>
-            <a onClick={setOpen(true)}>Delete recipe</a>
+            <a onClick={() => setOpen(true)}>Delete recipe</a>
           </li>
         </ul>
       </details>
-      <Dialog open={open} onClose={() => close()}></Dialog>
+      <DeleteDialog open={open} setOpen={setOpen} id={id} />
     </div>
   );
 }
